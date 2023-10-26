@@ -1,0 +1,15 @@
+﻿version: '3.7'
+
+services:    
+  dockerapp:
+    image: dockerapp
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - "3500:80"
+    networks:
+      - broker-kafka
+    
+networks:
+  broker-kafka:
+    driver: bridge  
